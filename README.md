@@ -28,7 +28,7 @@ D:\Vagrant\packer>**vagrant cloud publish -r dvsm48qnzqag/centos7-kernel6 1.0 vi
 You are about to publish a box on Vagrant Cloud with the following options:\
 dvsm48qnzqag/centos7-kernel6:   (v1.0) for provider 'virtualbox'\
 Automatic Release:     true\
-Box Architecture:      x64\
+**Box Architecture:      x64**\
 Do you wish to continue? [y/N]y\
 Saving box information...\
 Failed to create box dvsm48qnzqag/centos7-kernel6\
