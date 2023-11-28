@@ -16,10 +16,10 @@
 Только после этих изменений команда **packer build centos.json** выполнилась успешно и сформировался файл **centos-7-kernel-6-x86_64-Minimal.box** размером 1,21 ГБ.\
 **vagrant box add --name centos7-kernel6 centos-7-kernel-6-x86_64-Minimal.box**
 
-[vagrant@otus-task1 ~]$ **ls -l /boot/vmlinuz-***
--rwxr-xr-x. 1 root root  6769256 Nov 28 11:04 /boot/vmlinuz-0-rescue-be8e30284d15514d9d660bcfe6ca5109
--rwxr-xr-x. 1 root root  7051880 Oct 17 11:46 /boot/vmlinuz-3.10.0-1160.102.1.el7.x86_64
--rwxr-xr-x. 1 root root  6769256 Oct 19  2020 /boot/vmlinuz-3.10.0-1160.el7.x86_64
+[vagrant@otus-task1 ~]$ **ls -l /boot/vmlinuz-***\
+-rwxr-xr-x. 1 root root  6769256 Nov 28 11:04 /boot/vmlinuz-0-rescue-be8e30284d15514d9d660bcfe6ca5109\
+-rwxr-xr-x. 1 root root  7051880 Oct 17 11:46 /boot/vmlinuz-3.10.0-1160.102.1.el7.x86_64\
+-rwxr-xr-x. 1 root root  6769256 Oct 19  2020 /boot/vmlinuz-3.10.0-1160.el7.x86_64\
 -rwxr-xr-x. 1 root root 11032192 Nov 20 12:01 /boot/vmlinuz-6.6.2-1.el7.elrepo.x86_64
 
 При развёртывании из файла, ВМ нормально поднимается с обновлённым ядром, но при загрузке в облако ошибка ниже. Возможно из-за того, что у меня процессор AMD и при развёртывании CentOS 7 неверно определяется архитектура (x64 вместо amd64).\
