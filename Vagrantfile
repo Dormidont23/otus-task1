@@ -8,8 +8,4 @@ Vagrant.configure("2") do |config|
     vb.gui = false
     vb.name = "otus-task1"
   end
-
-#  config.vm.provision "shell", inline: <<-SHELL
-#    ls -l /boot/vmlinuz-*
-#  SHELL
 end
