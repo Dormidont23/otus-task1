@@ -9,7 +9,7 @@
 3. Загрузить Vagrant box в Vagrant Cloud.
 
 Сборка образа на основе CentOS 8 Stream не заработала с ошибкой, что отсутствует файл /run/install/ks.cfg, поэтому я решил попробовать собрать на более старой версии - CentOS 7.\
-За основу были взяты файлы конфигурации из репозитория https://github.com/Nickmob/vagrant_kernel_update\
+За основу были взяты файлы конфигурации из репозитория https://github.com/Nickmob/vagrant_kernel_update  
 В файле centos.json была подправлена ссылка на дистрибутив CentOS, подправлены названия и версии CentOS.\
 В файле ks.cfg также была изменена ссылка на пакеты для CentOS.\
 В файле stage-1-kernel-update.sh была изменена ссылка на репозитроий ELRepo.\
