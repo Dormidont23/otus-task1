@@ -34,6 +34,8 @@ Saving box information...\
 Failed to create box dvsm48qnzqag/centos7-kernel6\
 Vagrant Cloud request failed - Invalid architecture name: x64. Valid names: amd64, arm, arm64, i386, mips, mips64, mips64le, mipsle, ppc64, ppc64le, s390x, unknown
 
+Скачать box для локального развёртывания можно с ЯД https://disk.yandex.ru/d/E_oFIdfzepcTBQ
+
 После развёртывания box'а можно посмотреть список ядер. Видно, что было старое 3.10.0, а стало новое 6.6.3.\
 [root@otus-task1 ~]# **ls -l /boot/vmlinuz-***\
 -rwxr-xr-x. 1 root root  6769256 Dec  2 11:46 /boot/vmlinuz-0-rescue-7f7067301a779b4a8c34eb6716eaa4d1\
