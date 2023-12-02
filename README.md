@@ -20,7 +20,7 @@
 **sudo grub2-set-default 0**\
 **sudo grub2-mkconfig -o /boot/grub2/grub.cfg**
 
-Только после этих изменений команда **packer build centos.json** выполнилась успешно и сформировался файл **centos-7-kernel-6-x86_64-Minimal.box**.\
+Только после этих изменений команда **packer build centos.json** выполнилась успешно и сформировался файл **centos-7-kernel-6-x86_64-Minimal.box**.
 
 При развёртывании из файла командой **vagrant box add --name centos7-kernel6 centos-7-kernel-6-x86_64-Minimal.box**, ВМ нормально поднимается с обновлённым ядром, но при загрузке в облако ошибка ниже. Возможно из-за того, что у меня процессор AMD и при развёртывании CentOS 7 неверно определяется архитектура (x64 вместо amd64).\
 Я попробовал найти параметр, в котором можно явно указать архитектуру «amd64», но здесь https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvm не нашёл. Что интересно, для файла **Vagrantfile** есть такой параметр: **box_architecture**.\
