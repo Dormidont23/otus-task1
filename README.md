@@ -23,7 +23,7 @@
 -rwxr-xr-x. 1 root root 11038688 Nov 29 00:29 /boot/vmlinuz-6.6.3-1.el7.elrepo.x86_64
 
 При развёртывании из файла, ВМ нормально поднимается с обновлённым ядром, но при загрузке в облако ошибка ниже. Возможно из-за того, что у меня процессор AMD и при развёртывании CentOS 7 неверно определяется архитектура (x64 вместо amd64).\
-Я попробовал найти параметр, в котором можно явно указать архитектуру "amd64", но здесь https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvm не нашёл. Что интересно, для файла vagrant'а есть такой параметр: **box_architecture**.\
+Я попробовал найти параметр, в котором можно явно указать архитектуру "amd64", но здесь https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvm не нашёл. Что интересно, для файла **Vagrantfile** есть такой параметр: **box_architecture**.\
 D:\Vagrant\packer>**vagrant cloud publish -r dvsm48qnzqag/centos7-kernel6 1.0 virtualbox centos-7-kernel-6-x86_64-Minimal.box**\
 You are about to publish a box on Vagrant Cloud with the following options:\
 dvsm48qnzqag/centos7-kernel6:   (v1.0) for provider 'virtualbox'\
