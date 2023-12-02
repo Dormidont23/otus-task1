@@ -22,7 +22,8 @@
 
 Только после этих изменений команда **packer build centos.json** выполнилась успешно и сформировался файл **centos-7-kernel-6-x86_64-Minimal.box**.
 
-При локальном развёртывании из файла командой **vagrant box add --name centos7-kernel6 centos-7-kernel-6-x86_64-Minimal.box**, ВМ нормально поднимается с обновлённым ядром, а вот с облаком проблема: при загрузке в облако ошибка (см. ниже). Возможно из-за того, что у меня процессор AMD и при автоматической установке CentOS 7 неверно определяется архитектура (x64 вместо amd64).\
+При локальном развёртывании из файла командой **vagrant box add --name centos7-kernel6 centos-7-kernel-6-x86_64-Minimal.box**, ВМ нормально поднимается с обновлённым ядром, а вот с облаком проблема: при загрузке в облако ошибка (см. ниже). Возможно из-за того, что у меня процессор AMD и при автоматической установке CentOS 7 неверно определяется архитектура (x64 вместо amd64).
+
 Я попробовал найти параметр, в котором можно явно указать архитектуру «amd64», но здесь https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvm не нашёл. Что интересно, для файла **Vagrantfile** есть такой параметр: **box_architecture**.\
 D:\Vagrant\packer>**vagrant cloud publish -r dvsm48qnzqag/centos7-kernel6 1.0 virtualbox centos-7-kernel-6-x86_64-Minimal.box**\
 You are about to publish a box on Vagrant Cloud with the following options:\
