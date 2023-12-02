@@ -1,19 +1,17 @@
 #!/bin/bash
 
 sudo -i
-# Îáíîâëåíèå è î÷èñòêà âñåõ íåíóæíûõ ïàêåòîâ
+# ÐžÐ±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ Ð¸ Ð¾Ñ‡Ð¸ÑÑ‚ÐºÐ° Ð²ÑÐµÑ… Ð½ÐµÐ½ÑƒÐ¶Ð½Ñ‹Ñ… Ð¿Ð°ÐºÐµÑ‚Ð¾Ð²
 yum update -y
 yum clean all
 
-
-# Äîáàâëåíèå ssh-êëþ÷à äëÿ ïîëüçîâàòåëÿ vagrant
+# Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ ssh-ÐºÐ»ÑŽÑ‡Ð° Ð´Ð»Ñ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ vagrant
 mkdir -pm 700 /home/vagrant/.ssh
 curl -sL https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub -o /home/vagrant/.ssh/authorized_keys
 chmod 0600 /home/vagrant/.ssh/authorized_keys
 chown -R vagrant:vagrant /home/vagrant/.ssh
 
-
-# Óäàëåíèå âðåìåííûõ ôàéëîâ
+# Ð£Ð´Ð°Ð»ÐµÐ½Ð¸Ðµ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð½Ñ‹Ñ… Ñ„Ð°Ð¹Ð»Ð¾Ð²
 rm -rf /tmp/*
 rm  -f /var/log/wtmp /var/log/btmp
 rm -rf /var/cache/* /usr/share/doc/*
@@ -24,7 +22,8 @@ history -c
 
 rm -rf /run/log/journal/*
 sync
+# Ð˜ ÐµÑ‰Ñ‘ Ñ€Ð°Ð· Ð¾Ð±Ð½Ð¾Ð²Ð¸Ð¼ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ñ‹ GRUB, Ð¿Ð¾ÑÐºÐ¾Ð»ÑŒÐºÑƒ Ð¾Ð´Ð½Ð¾Ð³Ð¾ Ñ€Ð°Ð·Ð° Ð¿Ð¾Ñ‡ÐµÐ¼Ñƒ-Ñ‚Ð¾ Ð½Ðµ Ñ…Ð²Ð°Ñ‚Ð°ÐµÑ‚
 grub2-set-default 0
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+# Ð˜ ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»ÑŒÐ½Ñ‹Ð¹ Ñ€ÐµÐ±ÑƒÑ‚
 shutdown -r now
-#echo "###   Hi from second stage" >> /boot/grub2/grub.cfg
