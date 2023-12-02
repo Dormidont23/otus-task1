@@ -8,12 +8,19 @@
 2. Создать Vagrant box c помощью Packer.
 3. Загрузить Vagrant box в Vagrant Cloud.
 
-Сборка образа на основе CentOS 8 Stream не заработала с ошибкой, что отсутствует файл /run/install/ks.cfg, поэтому я решил попробовать собрать на более старой версии - CentOS 7.\
+Сборка образа на основе CentOS 8 Stream не заработала с ошибкой, что отсутствует файл /run/install/ks.cfg (Kickstart file /run/install/ks.cfg is missing.), поэтому я решил попробовать собрать на более старой версии - CentOS 7.\
 За основу были взяты файлы конфигурации из репозитория https://github.com/Nickmob/vagrant_kernel_update  
 В файле _centos.json_ была подправлена ссылка на дистрибутив CentOS, подправлены названия и версии CentOS.\
 В файле _ks.cfg_ также была изменена ссылка на пакеты для CentOS.\
 В файле _stage-1-kernel-update.sh_ была изменена ссылка на репозитроий ELRepo.\
-Только после этих изменений команда **packer build centos.json** выполнилась успешно и сформировался файл **centos-7-kernel-6-x86_64-Minimal.box** размером 1,21 ГБ.\
+Также были подправлены строки в файле _stage-1-kernel-update.sh_, в которых происходит обновление параметров загрузчика _grub_. Вместо\
+**grub2-mkconfig -o /boot/grub2/grub.cfg**\
+**sudo grub2-set-default 0**\
+стало\
+**sudo grub2-set-default 0**\
+**sudo grub2-mkconfig -o /boot/grub2/grub.cfg**
+
+Только после этих изменений команда **packer build centos.json** выполнилась успешно и сформировался файл **centos-7-kernel-6-x86_64-Minimal.box**.\
 **vagrant box add --name centos7-kernel6 centos-7-kernel-6-x86_64-Minimal.box**
 
 [root@otus-task1 ~]# **ls -l /boot/vmlinuz-***\
