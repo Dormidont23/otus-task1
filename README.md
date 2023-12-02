@@ -35,7 +35,7 @@ Automatic Release:     true\
 Do you wish to continue? [y/N]y\
 Saving box information...\
 Failed to create box dvsm48qnzqag/centos7-kernel6\
-Vagrant Cloud request failed - Invalid architecture name: x64. Valid names: amd64, arm, arm64, i386, mips, mips64, mips64le, mipsle, ppc64, ppc64le, s390x, unknown
+Vagrant Cloud request failed - **Invalid architecture name: x64**. Valid names: amd64, arm, arm64, i386, mips, mips64, mips64le, mipsle, ppc64, ppc64le, s390x, unknown
 
 Скачать box для локального развёртывания можно с ЯД https://disk.yandex.ru/d/E_oFIdfzepcTBQ
 
