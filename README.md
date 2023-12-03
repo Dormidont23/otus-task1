@@ -15,7 +15,7 @@
 В файле _stage-1-kernel-update.sh_ была изменена ссылка на репозитроий ELRepo.\
 Также были подправлены строки в файле _stage-1-kernel-update.sh_, в которых происходит обновление параметров загрузчика _grub_. Вместо\
 **grub2-mkconfig -o /boot/grub2/grub.cfg**\
-**sudo grub2-set-default 0**\
+**grub2-set-default 0**\
 стало\
 **sudo grub2-set-default 0**\
 **sudo grub2-mkconfig -o /boot/grub2/grub.cfg**
