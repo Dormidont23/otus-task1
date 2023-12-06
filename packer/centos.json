@@ -50,7 +50,7 @@
   "post-processors": [
     {
       "compression_level": "7",
-      "output": "centos-{{user `artifact_version`}}-kernel-6-x86_64-Minimal.box",
+      "output": "centos-{{user `artifact_version`}}-kernel-6-amd64-Minimal.box",
       "type": "vagrant"
     }
   ],
