@@ -72,6 +72,7 @@
     }
   ],
   "variables": {
+    "architecture": "amd64",
     "artifact_description": "CentOS 7 with kernel 6.x",
     "artifact_version": "7",
     "image_name": "centos-7",
