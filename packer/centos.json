@@ -40,7 +40,7 @@
           "modifyvm",
           "{{.Name}}",
           "--cpus",
-          "2"
+          "4"
         ],
         ["modifyvm", "{{.Name}}", "--nat-localhostreachable1", "on"]
       ],
