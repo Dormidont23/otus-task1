@@ -37,6 +37,18 @@ Saving box information...\
 Failed to create box dvsm48qnzqag/centos7-kernel6\
 Vagrant Cloud request failed - **Invalid architecture name: x64**. Valid names: amd64, arm, arm64, i386, mips, mips64, mips64le, mipsle, ppc64, ppc64le, s390x, unknown
 
+Частично полечилось указанием параметров "-a amd64" и "--no-private".\
+D:\Vagrant\packer>vagrant cloud publish -a amd64 --no-private -r dvsm48qnzqag/centos7-kernel6 1.0 virtualbox centos-7-kernel-6-amd64-Minimal.box\
+You are about to publish a box on Vagrant Cloud with the following options:\
+dvsm48qnzqag/centos7-kernel6:   (v1.0) for provider 'virtualbox'\
+Automatic Release:     true\
+Box Architecture:      amd64\
+Do you wish to continue? [y/N]y\
+Saving box information...\
+Uploading provider with file D:/Vagrant/packer/centos-7-kernel-6-amd64-Minimal.box
+
+**Failed to create box dvsm48qnzqag/centos7-kernel6**\
+**Vagrant Cloud request failed**
 
 Скачать box для локального развёртывания можно с ЯД https://disk.yandex.ru/d/E_oFIdfzepcTBQ
 
