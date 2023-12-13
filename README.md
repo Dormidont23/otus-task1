@@ -38,7 +38,7 @@ Failed to create box dvsm48qnzqag/centos7-kernel6\
 Vagrant Cloud request failed - **Invalid architecture name: x64**. Valid names: amd64, arm, arm64, i386, mips, mips64, mips64le, mipsle, ppc64, ppc64le, s390x, unknown
 
 Частично полечилось указанием параметров "-a amd64" и "--no-private".\
-D:\Vagrant\packer>vagrant cloud publish -a amd64 --no-private -r dvsm48qnzqag/centos7-kernel6 1.0 virtualbox centos-7-kernel-6-amd64-Minimal.box\
+D:\Vagrant\packer>**vagrant cloud publish -a amd64 --no-private -r dvsm48qnzqag/centos7-kernel6 1.0 virtualbox centos-7-kernel-6-amd64-Minimal.box**\
 You are about to publish a box on Vagrant Cloud with the following options:\
 dvsm48qnzqag/centos7-kernel6:   (v1.0) for provider 'virtualbox'\
 Automatic Release:     true\
@@ -50,11 +50,16 @@ Uploading provider with file D:/Vagrant/packer/centos-7-kernel-6-amd64-Minimal.b
 **Failed to create box dvsm48qnzqag/centos7-kernel6**\
 **Vagrant Cloud request failed**
 
-Скачать box для локального развёртывания можно с ЯД https://disk.yandex.ru/d/E_oFIdfzepcTBQ
+На такую ошибку многие в чате жаловались. Помогает заливка образа через браузер. Я тоже залил через браузер.
 
-После развёртывания box'а можно посмотреть список ядер. Видно, что было старое 3.10.0, а стало новое 6.6.3.\
+После развёртывания box'а можно посмотреть текущую версию ядра:\
+[vagrant@otus-task1 ~]$ **uname -r**\
+6.6.5-1.el7.elrepo.x86_64
+
+А также можно посмотреть список ядер. Видно, что было старое 3.10.0, а стало новое 6.6.5.\
 [root@otus-task1 ~]# **ls -l /boot/vmlinuz-***\
--rwxr-xr-x. 1 root root  6769256 Dec  2 11:46 /boot/vmlinuz-0-rescue-7f7067301a779b4a8c34eb6716eaa4d1\
+-rwxr-xr-x. 1 root root  6769256 Dec 10 12:35 /boot/vmlinuz-0-rescue-17a168a7246a164db01ebe87fcd0751b\
 -rwxr-xr-x. 1 root root  7051880 Oct 17 11:46 /boot/vmlinuz-3.10.0-1160.102.1.el7.x86_64\
 -rwxr-xr-x. 1 root root  6769256 Oct 19  2020 /boot/vmlinuz-3.10.0-1160.el7.x86_64\
+-rwxr-xr-x. 1 root root 11043264 Dec  8 15:22 /boot/vmlinuz-6.6.5-1.el7.elrepo.x86_64\
 -rwxr-xr-x. 1 root root 11038688 Nov 29 00:29 /boot/vmlinuz-6.6.3-1.el7.elrepo.x86_64
